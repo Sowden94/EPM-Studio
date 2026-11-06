@@ -1,14 +1,14 @@
-# EPM Studio
+# EPM Studio · Beta
 
 **Draw a molecule. Explore its electrostatic potential. Make clear figures and rotating animations for teaching.**
 
 EPM Studio combines an organic chemistry drawing editor with a 3D molecular viewer. Generate a qualitative potential estimate for a new structure in your browser, explore six precomputed quantum-derived examples, or import matching density and potential cube files. Keep the atoms visible, adjust the rainbow surface and save a still image or full-turn animation for a lecture.
 
-**[Getting started](guides/user-guide.md)** · **[Create your own website](SETUP.md)** · **[Methods and limitations](guides/methods.md)** · **[Licence](LICENSE)**
+**[Open EPM Studio Beta →](https://sowden94.github.io/EPM-Studio/)** · **[Getting started](guides/user-guide.md)** · **[Methods and limitations](guides/methods.md)** · **[Licence](LICENSE)**
 
-> **Beta — under active development.** Browser-generated maps are qualitative Gasteiger point-charge estimates on a van der Waals envelope. They are distinct from the quantum-derived maps supplied as examples. Review recognised structures and generated geometries before using them. The interface and supported chemistry may change as the project develops.
+> **Beta — under active development.** Browser-generated maps are qualitative Gasteiger point-charge estimates on a van der Waals envelope. They are distinct from the quantum-derived maps supplied as examples. Review drawn structures and generated geometries before using them. The interface and supported chemistry may change as the project develops.
 >
-> **Hosting:** GitHub Pages runs the drawing tools, local EPM estimates and exports. Automatic image recognition additionally needs the included server endpoint, supported by the GitHub-connected Cloudflare Pages setup. No deployed URL is assumed by this package: use the URL supplied by your chosen host.
+> **Beta:** hosted on GitHub Pages. Molecule input is drawing-only for now; image upload and automatic recognition are not available.
 
 ![Acetic acid electrostatic-potential figure exported by EPM Studio, including visible carbon and oxygen labels, method caption and numerical scale](media/acetic-acid-quantum.png)
 
@@ -32,11 +32,6 @@ The drawing panel stays beside the larger EPM viewer. Build bond-line structures
 
 The editor includes valence checks. It is not a general organometallic or coordination-chemistry editor; unusual valence states and unsupported structures may fail.
 
-## Turn a structure image into an editable drawing
-
-Choose **Upload image** and select, paste or drop a clear PNG, JPG or WebP image containing one molecule. **Recognise molecule** uses DECIMER to identify atoms and bonds and returns an editable drawing. Check connectivity, charges and stereochemistry, then choose **Show potential map**.
-
-Selecting the image stays local. Clicking recognition sends it to the external service at `api.naturalproducts.net`; image recognition is separate from the local EPM calculation. The service can fail or return an incorrect interpretation. On GitHub Pages without the endpoint, the upload panel explains that automatic recognition is unavailable.
 
 ## Generate qualitative maps for new molecules
 
@@ -85,27 +80,11 @@ A four-second full turn rendered with the application’s software renderer and 
 
 The interface includes labelled inputs, visible keyboard focus, keyboard drawing and viewer controls, readable molecular descriptions, numerical potential legends and a paused initial view. **WCAG 2.2 AA is a target, not a certified conformance claim**; full assistive-technology and manual accessibility testing remains necessary.
 
-Drawings, local EPM estimates and imported cube data remain in the browser. Automatic image recognition is an explicitly triggered external transfer. There are no user accounts or cloud project backups in this portable edition. Keep downloaded structures and your original calculation files.
-
-A private GitHub repository does not by itself make the hosted website private. See the hosting guide if access protection is needed.
-
-## Run your own copy
-
-**[SETUP.md](SETUP.md)** contains the complete GitHub upload and hosting instructions. **START-HERE.html** is an offline-readable setup guide included in the download.
-
-| GitHub + Cloudflare Pages | GitHub Pages alone |
-|---|---|
-| Includes the image-recognition endpoint, plus the static browser app. Connect your repository and deploy `docs` with build command `exit 0`. | Serves the static app from `main` → `/docs`. Drawing, local maps, examples and exports work; automatic image recognition is unavailable. |
-
-The repository contains source and vendored runtime assets; a dependency installation is not required to serve the static app. To run the developer checks with Node.js 22 or later:
-
-```sh
-npm test
-```
+Drawings, local EPM estimates and imported cube data remain in the browser. Image upload and automatic image recognition are not included in this beta. There are no user accounts or cloud project backups in this portable edition. Keep downloaded structures and your original calculation files.
 
 ## Learn, report and contribute
 
-- **[User guide](guides/user-guide.md):** drawing, images, maps, labels and lecture exports.
+- **[User guide](guides/user-guide.md):** drawing, maps, labels and lecture exports.
 - **[Methods](guides/methods.md):** distinctions between map types and interpretation limits.
 - **[Contributing](CONTRIBUTING.md):** development setup and changes.
 - **[Security](SECURITY.md):** reporting a suspected vulnerability.
