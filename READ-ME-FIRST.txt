@@ -1,0 +1,33 @@
+EPM STUDIO — RENDERING AND EXPORT QUALITY UPDATE
+
+Upload from the MAIN repository page, not from inside docs.
+
+1. Extract this ZIP.
+2. On GitHub open Sowden94/EPM-Studio > Add file > Upload files.
+3. Drag all the extracted contents into GitHub, including the WHOLE docs folder and guides folder. Preserve their paths.
+4. Before committing, check that the list contains docs/app.js, docs/index.html, docs/surface-raster.js and docs/video-export.js.
+5. Commit to main, wait for the Pages deployment under Actions, and hard-refresh the site.
+6. Confirm the image button says Save image · 4K PNG. The Upload image tab remains removed.
+
+This update requires the existing complete EPM-Studio repository. The scientific datasets and original dependencies are unchanged and are not included again.
+
+Changes:
+- Nearest visible surface is blended once, avoiding front/back triangle transparency artefacts.
+- Software fallback interpolates smooth vertex colours with a depth buffer instead of painting flat translucent triangles.
+- Higher-detail atoms, bonds and label textures.
+- Native 3840 x 2160 PNG stills with readable method and scale captions.
+- Full HD/QHD/4K WebM movies encoded at a deterministic 30 fps, with a complete turn.
+- HD 1280 x 720 GIFs at 20 fps with a fixed palette to reduce colour flicker. GIF is limited to 256 colours; PNG/WebM give smoother full-colour output.
+- Export framing includes the surface envelope and prevents zoomed-in cropping.
+
+Movie export uses native WebCodecs VP8/VP9 support, available in compatible browsers such as current Chrome/Edge. If an encoder is unavailable, the app explains this; no recognition runtime, server or additional third-party library is introduced. Rendering may take longer than the movie's playback duration.
+
+Validation:
+- Browser: smooth surfaces visually checked for formaldehyde and a newly drawn water molecule using the software fallback.
+- Browser: PNG decoded at 3840 x 2160.
+- Browser: VP9 WebM decoded at 1920 x 1080, exactly 4 seconds, with 120 encoded frames.
+- Browser: GIF decoded at 1280 x 720, 80 frames at 50 ms with a fixed 243-colour palette.
+- npm test passed, including nearest-depth/duplicate-transparency regression checks and a real VP8 WebM bitstream checked with ffprobe.
+- WebGL hardware rendering and 4K movie encoding were not exercised in this test browser; they remain dependent on device/browser support.
+
+This ZIP has not been committed or deployed for you. Original project and dependency licences remain in force.

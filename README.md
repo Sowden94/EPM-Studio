@@ -63,12 +63,13 @@ Choose the default **red → yellow → green → cyan → blue** rainbow scale 
 
 Drag the molecule, use keyboard rotation controls, zoom and start or pause automatic rotation. Choose the orientation you want before exporting.
 
-- **PNG:** a 1000 × 750 still image with a method caption and potential scale.
-- **GIF:** a complete 360° turn, set to loop, with 4-, 8- or 12-second duration options.
-- **WebM:** a full-turn movie where the browser supports MediaRecorder and the selected video format. Enable repeat in your presentation or player when needed.
+- **PNG:** a native 3840 × 2160 still image with a method caption and potential scale.
+- **GIF:** a 1280 × 720 full-turn loop at 20 fps, using one stable 256-colour-or-smaller palette, with 4-, 8- or 12-second duration options.
+- **WebM:** a full-turn movie at 30 fps, with Full HD, QHD and 4K options where a WebCodecs VP8/VP9 encoder is supported. Every frame is rendered before encoding; processing may take longer than playback. Enable repeat in your presentation or player when needed.
 - **Calculation record:** JSON metadata describing the method, geometry, display settings and relevant source information.
 
-Animations rotate a static molecular model; they are not molecular dynamics simulations. Estimated-map exports retain the estimate label and van der Waals surface description.
+GIF is limited to 256 colours; PNG and WebM preserve smoother full-colour gradients. Exports fit the surface and include method and scale captions.
+\nAnimations rotate a static molecular model; they are not molecular dynamics simulations. Estimated-map exports retain the estimate label and van der Waals surface description.
 
 ### Watch a full turn
 
