@@ -1,0 +1,1 @@
+[{"id": "formaldehyde", "name": "Formaldehyde", "smiles": "C=O"}, {"id": "ethanol", "name": "Ethanol", "smiles": "CCO"}, {"id": "acetone", "name": "Acetone", "smiles": "CC(=O)C"}, {"id": "benzene", "name": "Benzene", "smiles": "c1ccccc1"}, {"id": "acetic-acid", "name": "Acetic acid", "smiles": "CC(=O)O"}, {"id": "methylamine", "name": "Methylamine", "smiles": "CN"}]

@@ -1,0 +1,1381 @@
+[
+  {
+    "smiles": "C=O",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": 0.10638225365854179
+      },
+      {
+        "el": "O",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.3070970261864102
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.10035738626393421
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.10035738626393421
+      }
+    ]
+  },
+  {
+    "smiles": "CCO",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.04183848615477239
+      },
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.04022058174908642
+      },
+      {
+        "el": "O",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.3966637147812598
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.025373291592356653
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.025373291592356653
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.025373291592356653
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.056069718921006324
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.056069718921006324
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.21002230656786322
+      }
+    ]
+  },
+  {
+    "smiles": "CC(=O)O",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.03376759340677524
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": 0.2996845531582142
+      },
+      {
+        "el": "O",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.2528204334965765
+      },
+      {
+        "el": "O",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.481433475172105
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03484836041060298
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03484836041060298
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03484836041060298
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.29625668087188306
+      }
+    ]
+  },
+  {
+    "smiles": "CC(=O)[O-]",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.02496536893238248
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": 0.0382785989211398
+      },
+      {
+        "el": "O",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.5504770280073037
+      },
+      {
+        "el": "O",
+        "hyb": "sp2",
+        "formal": -1,
+        "charge": -0.5504770280073037
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.029213608675283387
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.029213608675283387
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.029213608675283387
+      }
+    ]
+  },
+  {
+    "smiles": "CN",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.019502380004263048
+      },
+      {
+        "el": "N",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.33326905475707136
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.0388587587281677
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.0388587587281677
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.0388587587281677
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.11809757928841563
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.11809757928841563
+      }
+    ]
+  },
+  {
+    "smiles": "C[NH3+]",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.06338932543724711
+      },
+      {
+        "el": "N",
+        "hyb": "sp3",
+        "formal": 1,
+        "charge": -0.3599997344174269
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.08842951321888558
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.08842951321888558
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.08842951321888558
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.3437739564411743
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.3437739564411743
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.3437739564411743
+      }
+    ]
+  },
+  {
+    "smiles": "CCF",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.03651071115792676
+      },
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.08658380986553287
+      },
+      {
+        "el": "F",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.25141279975229347
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.02569030743169195
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.02569030743169195
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.02569030743169195
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.062134389374805754
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.062134389374805754
+      }
+    ]
+  },
+  {
+    "smiles": "CCCl",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.05162904370707105
+      },
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.019456700381333
+      },
+      {
+        "el": "Cl",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.12701765618915772
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.024243846867236206
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.024243846867236206
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.024243846867236206
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.04322922945659357
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.04322922945659357
+      }
+    ]
+  },
+  {
+    "smiles": "CCBr",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.0555527633492001
+      },
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.00028051128367713934
+      },
+      {
+        "el": "Br",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.09310768028380192
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.023882188814003502
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.023882188814003502
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.023882188814003502
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03836668295365719
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03836668295365719
+      }
+    ]
+  },
+  {
+    "smiles": "CCI",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.056305882192290026
+      },
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.003318429251282842
+      },
+      {
+        "el": "I",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.086675952194542
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.02381223948963122
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.02381223948963122
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.02381223948963122
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03743177258461061
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03743177258461061
+      }
+    ]
+  },
+  {
+    "smiles": "c1ccccc1",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.062268570782092456
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.062268570782092456
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.062268570782092456
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.062268570782092456
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.062268570782092456
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.062268570782092456
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.062268570782092456
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.062268570782092456
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.062268570782092456
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.062268570782092456
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.062268570782092456
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.062268570782092456
+      }
+    ]
+  },
+  {
+    "smiles": "c1ccncc1",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.05920938057632358
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.04382007477142178
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": 0.02672876829526118
+      },
+      {
+        "el": "N",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.264736970888988
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": 0.02672876829526118
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.04382007477142178
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.06238032281528078
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.06389655370099773
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.08397776710017825
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.08397776710017825
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.06389655370099773
+      }
+    ]
+  },
+  {
+    "smiles": "c1cc[nH]c1",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.044728066131323574
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.044728066131323574
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": 0.0004958447284679488
+      },
+      {
+        "el": "N",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.3676367128834121
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": 0.0004958447284679488
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.0638650893210583
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.0638650893210583
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.08153023391261552
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.16531050922177573
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.08153023391261552
+      }
+    ]
+  },
+  {
+    "smiles": "CC(=O)N",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.014604156473224208
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": 0.21379017959217533
+      },
+      {
+        "el": "O",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.2756984620980148
+      },
+      {
+        "el": "N",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.36992058791265336
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.033015348613491695
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.033015348613491695
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.033015348613491695
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.1590893340523967
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.1590893340523967
+      }
+    ]
+  },
+  {
+    "smiles": "COC",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.03507837222080641
+      },
+      {
+        "el": "O",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.3879283458815952
+      },
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.03507837222080641
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.05296193357333039
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.05296193357333039
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.05296193357333039
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.05296193357333039
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.05296193357333039
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.05296193357333039
+      }
+    ]
+  },
+  {
+    "smiles": "c1ccccc1O",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.02022944427290262
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.058593573972889716
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.06199998663933999
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.058593573972889716
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.02022944427290262
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": 0.11507481947527982
+      },
+      {
+        "el": "O",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.5079669948663066
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.06618126485169733
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.062405301366651046
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.06227299950069106
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.062405301366651046
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.06618126485169733
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.29309206658456344
+      }
+    ]
+  },
+  {
+    "smiles": "CS",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.021450825072964644
+      },
+      {
+        "el": "S",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.18280375938994023
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03411335363970864
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03411335363970864
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03411335363970864
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.10191452354377903
+      }
+    ]
+  },
+  {
+    "smiles": "CS(=O)C",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.011644363018606116
+      },
+      {
+        "el": "S",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.014804214088221839
+      },
+      {
+        "el": "O",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.2601579626577377
+      },
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.011644363018606116
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.037010837088717274
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.037010837088717274
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.037010837088717274
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.037010837088717274
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.037010837088717274
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.037010837088717274
+      }
+    ]
+  },
+  {
+    "smiles": "CS(=O)(=O)C",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.038502576555269764
+      },
+      {
+        "el": "S",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.1441041774452434
+      },
+      {
+        "el": "O",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.2294144591416005
+      },
+      {
+        "el": "O",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.2294144591416005
+      },
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.038502576555269764
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03961993128790298
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03961993128790298
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03961993128790298
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03961993128790298
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03961993128790298
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.03961993128790298
+      }
+    ]
+  },
+  {
+    "smiles": "CP",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.050006064098327814
+      },
+      {
+        "el": "P",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.1408757600340314
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.027422295144125832
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.027422295144125832
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.027422295144125832
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.05430746934999087
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.05430746934999087
+      }
+    ]
+  },
+  {
+    "smiles": "C[Si](C)(C)C",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.06974707149008706
+      },
+      {
+        "el": "Si",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": 0.041113738195957476
+      },
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.06974707149008706
+      },
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.06974707149008706
+      },
+      {
+        "el": "C",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.06974707149008706
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.019822878980365895
+      }
+    ]
+  },
+  {
+    "smiles": "B(O)O",
+    "atoms": [
+      {
+        "el": "B",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": 0.43207855527278805
+      },
+      {
+        "el": "O",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.4299027986101273
+      },
+      {
+        "el": "O",
+        "hyb": "sp3",
+        "formal": 0,
+        "charge": -0.4299027986101273
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.05074813557021607
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.1884894531886252
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.1884894531886252
+      }
+    ]
+  },
+  {
+    "smiles": "C#N",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp",
+        "formal": 0,
+        "charge": 0.04616338344477471
+      },
+      {
+        "el": "N",
+        "hyb": "sp",
+        "formal": 0,
+        "charge": -0.20196724530973323
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.15580386186495856
+      }
+    ]
+  },
+  {
+    "smiles": "C=C",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.10631107461236379
+      },
+      {
+        "el": "C",
+        "hyb": "sp2",
+        "formal": 0,
+        "charge": -0.10631107461236379
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.053155537306181895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.053155537306181895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.053155537306181895
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.053155537306181895
+      }
+    ]
+  },
+  {
+    "smiles": "C#C",
+    "atoms": [
+      {
+        "el": "C",
+        "hyb": "sp",
+        "formal": 0,
+        "charge": -0.12354428742869349
+      },
+      {
+        "el": "C",
+        "hyb": "sp",
+        "formal": 0,
+        "charge": -0.12354428742869349
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.12354428742869349
+      },
+      {
+        "el": "H",
+        "hyb": "unspecified",
+        "formal": 0,
+        "charge": 0.12354428742869349
+      }
+    ]
+  }
+]

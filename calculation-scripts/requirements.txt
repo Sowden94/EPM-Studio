@@ -1,0 +1,4 @@
+pyscf==2.14.0
+rdkit==2026.9.1
+numpy==2.3.5
+scikit-image==0.26.0
