@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: GPL-3.0-only
-// Copyright (c) 2026 M. J. Sowden. See LICENSE for terms.
 /* Shared drawing engine ported from the user's Orgo 101 source. */
 const clone=x=>JSON.parse(JSON.stringify(x));
 const keyBond=(a,b)=>[a,b].sort().join('~');

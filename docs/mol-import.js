@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: GPL-3.0-only
-// Copyright (c) 2026 M. J. Sowden. See LICENSE for terms.
 // Strict V2000 import: reject unsupported features instead of silently discarding them.
 export function graphFromMol(mol){
  const lines=mol.replace(/\r/g,'').split('\n'),counts=lines.findIndex(line=>line.includes('V2000'));

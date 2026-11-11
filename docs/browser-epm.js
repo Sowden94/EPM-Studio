@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: GPL-3.0-only
-// Copyright (c) 2026 M. J. Sowden. See LICENSE for terms.
 // Gasteiger–Marsili charge equalisation adapted from RDKit's BSD implementation.
 // Copyright (C) 2003-2011 Greg Landrum and Rational Discovery LLC.
 // See vendor/RDKit-LICENSE.txt and browser-methods.html for sources and limitations.
@@ -44,15 +42,18 @@ export function graphMolfile(g){
  for(const b of g.bonds){const reverse=b.stereoFrom===b.b;lines.push(pad(g.atoms.findIndex(a=>a.id===(reverse?b.b:b.a))+1,3)+pad(g.atoms.findIndex(a=>a.id===(reverse?b.a:b.b))+1,3)+pad(b.order,3)+pad(b.stereo==='wedge'?1:b.stereo==='hash'?6:0,3)+'  0  0  0');}
  const charged=g.atoms.map((a,i)=>[i+1,a.charge||0]).filter(([,q])=>q);for(let k=0;k<charged.length;k+=8){const group=charged.slice(k,k+8);lines.push('M  CHG'+pad(group.length,3)+group.map(([i,q])=>pad(i,4)+pad(q,4)).join(''));}lines.push('M  END');return lines.join('\n');
 }
-export function potentialAt(point,atoms,charges){return atoms.reduce((sum,a,i)=>sum+charges[i]*BOHR/Math.hypot(...a.p.map((v,k)=>v-point[k])),0);}
+export function potentialAt(point,atoms,charges){let sum=0;for(let i=0;i<atoms.length;i++){const p=atoms[i].p,dx=p[0]-point[0],dy=p[1]-point[1],dz=p[2]-point[2];sum+=charges[i]*BOHR/Math.sqrt(dx*dx+dy*dy+dz*dz);}return sum;}
 // Bondi radii (A), with the B radius from Mantina et al. (2009), used only for the display surface.
 const radii={H:1.2,B:1.92,C:1.7,N:1.55,O:1.52,F:1.47,Si:2.1,P:1.8,S:1.8,Cl:1.75,Br:1.85,I:1.98};
 export function surfaceMesh(atoms,charges){
- const lower=[0,1,2].map(k=>Math.min(...atoms.map(a=>a.p[k]-radii[a.el]))-.65),upper=[0,1,2].map(k=>Math.max(...atoms.map(a=>a.p[k]+radii[a.el]))+.65),span=upper.map((v,k)=>v-lower[k]),step=Math.max(.26,Math.max(...span)/60),dims=span.map(v=>Math.ceil(v/step)+1),[nx,ny,nz]=dims,values=new Float32Array(nx*ny*nz);
- if(values.length>250000)throw Error('This molecule is too large for the browser surface grid.');
+ const lower=[0,1,2].map(k=>Math.min(...atoms.map(a=>a.p[k]-radii[a.el]))-.65),upper=[0,1,2].map(k=>Math.max(...atoms.map(a=>a.p[k]+radii[a.el]))+.65),span=upper.map((v,k)=>v-lower[k]);
+ // Keep the spatial detail for long molecules; budget all grid points, not just the longest axis.
+ let step=Math.max(.26,Math.cbrt(span[0]*span[1]*span[2]/220000)),dims=span.map(v=>Math.ceil(v/step)+1);
+ while(dims.reduce((n,d)=>n*d,1)>250000){step*=1.02;dims=span.map(v=>Math.ceil(v/step)+1);}
+ const [nx,ny,nz]=dims,values=new Float32Array(nx*ny*nz),surfaceAtoms=atoms.map(a=>[...a.p,radii[a.el]]);
  for(let x=0;x<nx;x++)for(let y=0;y<ny;y++)for(let z=0;z<nz;z++){
-  const p=[lower[0]+x*step,lower[1]+y*step,lower[2]+z*step];let distance=Infinity;
-  for(const a of atoms){const d=Math.hypot(...a.p.map((v,k)=>v-p[k]))-radii[a.el],h=Math.max(.35-Math.abs(distance-d),0)/.35;distance=Math.min(distance,d)-h*h*.35/4;}
+  const px=lower[0]+x*step,py=lower[1]+y*step,pz=lower[2]+z*step;let distance=Infinity;
+  for(const a of surfaceAtoms){const dx=a[0]-px,dy=a[1]-py,dz=a[2]-pz,d=Math.sqrt(dx*dx+dy*dy+dz*dz)-a[3],h=Math.max(.35-Math.abs(distance-d),0)/.35;distance=Math.min(distance,d)-h*h*.35/4;}
   values[(x*ny+y)*nz+z]=distance;
  }
  const offsets=[[0,0,0],[1,0,0],[1,1,0],[0,1,0],[0,0,1],[1,0,1],[1,1,1],[0,1,1]],tets=[[0,5,1,6],[0,1,2,6],[0,2,3,6],[0,3,7,6],[0,7,4,6],[0,4,5,6]],edges=[[0,1],[0,2],[0,3],[1,2],[1,3],[2,3]],vertices=[],faces=[],potential=[];

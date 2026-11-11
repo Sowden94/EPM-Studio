@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // Copyright (c) 2026 M. J. Sowden.
 // Nearest visible surface only: interpolate colours, then apply opacity once.
-export function rasterSurface(ctx, mesh, positions, colours, opacity) {
+export function rasterSurface(ctx, mesh, positions, colours, opacity, lighting=null) {
   const w=ctx.canvas.width,h=ctx.canvas.height,image=ctx.createImageData(w,h),out=image.data;
   const depth=new Float32Array(w*h);depth.fill(-Infinity);
   for(let i=0;i<out.length;i+=4){out[i]=252;out[i+1]=253;out[i+2]=255;out[i+3]=255;}
@@ -18,7 +18,8 @@ export function rasterSurface(ctx, mesh, positions, colours, opacity) {
       if(u< -1e-6||v< -1e-6||t< -1e-6)continue;
       const z=u*positions[a+2]+v*positions[b+2]+t*positions[c+2],pixel=y*w+x;
       if(z<depth[pixel])continue;depth[pixel]=z;
-      for(let j=0;j<3;j++)out[pixel*4+j]=[252,253,255][j]*(1-opacity)+255*opacity*(u*colours[a+j]+v*colours[b+j]+t*colours[c+j]);
+      const gain=lighting?u*lighting[f[k]*2]+v*lighting[f[k+1]*2]+t*lighting[f[k+2]*2]:1,shine=lighting?u*lighting[f[k]*2+1]+v*lighting[f[k+1]*2+1]+t*lighting[f[k+2]*2+1]:0;
+      for(let j=0;j<3;j++)out[pixel*4+j]=[252,253,255][j]*(1-opacity)+255*opacity*Math.min(1,(u*colours[a+j]+v*colours[b+j]+t*colours[c+j])*gain+shine);
     }
   }
   ctx.putImageData(image,0,0);

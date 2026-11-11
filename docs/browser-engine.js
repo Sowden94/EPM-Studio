@@ -1,11 +1,10 @@
-// SPDX-License-Identifier: GPL-3.0-only
-// Copyright (c) 2026 M. J. Sowden. See LICENSE for terms.
 import {Molecule,ConformerGenerator,ForceFieldMMFF94,Resources} from './vendor/openchemlib/openchemlib.js';
 import {partialCharges,graphMolfile,graphKey,surfaceMesh} from './browser-epm.js';
+export const BROWSER_LIMITS=Object.freeze({heavyAtoms:100,drawnAtoms:400,totalAtoms:400});
 let ready=false;
 export async function calculateBrowserEpm(graph,progress=()=>{},resources){
  if(!graph?.atoms?.length)throw Error('Draw a molecule first.');
- if(graph.atoms.filter(a=>a.element!=='H').length>40||graph.atoms.length>120)throw Error('Browser estimates currently support up to 40 non-hydrogen atoms and 120 drawn atoms.');
+ if(graph.atoms.filter(a=>a.element!=='H').length>BROWSER_LIMITS.heavyAtoms||graph.atoms.length>BROWSER_LIMITS.drawnAtoms)throw Error('Browser estimates support up to 100 non-hydrogen atoms and 400 drawn atoms, including hydrogen.');
  progress('Loading the local chemistry engine…');
  if(!ready){Resources.register(resources||await (await fetch(new URL('./vendor/openchemlib/resources.json',import.meta.url))).text());ready=true;}
  const mol=Molecule.fromMolfile(graphMolfile(graph));mol.ensureHelperArrays(Molecule.cHelperParities);
@@ -14,7 +13,7 @@ export async function calculateBrowserEpm(graph,progress=()=>{},resources){
  progress('Generating a 3D conformer on this device…');
  const generator=new ConformerGenerator(42);if(!generator.initializeConformers(mol,{maxTorsionSets:400}))throw Error('Could not initialise a 3D structure for this molecule.');
  if(!generator.getNextConformerAsMolecule(mol))throw Error('Could not generate a valid 3D conformer. Try a simpler structure.');
- if(mol.getAllAtoms()>180)throw Error('The structure exceeds the browser limit after adding hydrogens.');
+ if(mol.getAllAtoms()>BROWSER_LIMITS.totalAtoms)throw Error('The structure exceeds 400 total atoms after adding hydrogens.');
  let minimized=false;try{progress('Refining the geometry with MMFF94…');const ff=new ForceFieldMMFF94(mol,'MMFF94');minimized=ff.minimise({maxIts:500})===0;}catch{}
  const charges=partialCharges(mol),atoms=Array.from({length:mol.getAllAtoms()},(_,i)=>({el:mol.getAtomLabel(i),p:[mol.getAtomX(i),mol.getAtomY(i),mol.getAtomZ(i)]}));
  if(atoms.some(a=>a.p.some(v=>!Number.isFinite(v))))throw Error('The generated geometry contains invalid coordinates.');
