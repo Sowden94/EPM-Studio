@@ -1,3 +1,4 @@
+import {rotateSelection} from './free-rotation.js';
 // SPDX-License-Identifier: GPL-3.0-only
 // Copyright (c) 2026 M. J. Sowden.
 export function insidePolygon(point, polygon){
@@ -27,7 +28,7 @@ export function selectionEditor(Base,$,announce=()=>{}){
   setGraph(g,record=true){this.selected.clear();return super.setGraph(g,record);}
   undo(){this.selected.clear();return super.undo();}
   redo(){this.selected.clear();return super.redo();}
-  setTool(tool){if(this.locked)return;if(!['lasso','move'].includes(tool))this.selected.clear();super.setTool(tool);}
+  setTool(tool){if(this.locked)return;if(!['lasso','move','rotateSelection'].includes(tool))this.selected.clear();super.setTool(tool);}
   selectAll(){if(this.locked)return;this.tool='lasso';this.anchor=null;this.selected.clear();for(const a of this.graph.atoms)this.selected.add(a.id);this.render();announce(this.selected.size+' atoms selected. Drag the highlighted area to move them, or choose Delete selected.');}
   deleteSelected(){
    if(this.locked||!this.selected.size)return;
@@ -47,17 +48,21 @@ export function selectionEditor(Base,$,announce=()=>{}){
    if(this.locked||e.button>0)return;
    const p=this.point(e),bounds=this.selectionBounds();
    const within=bounds&&p.x>=bounds.left&&p.x<=bounds.right&&p.y>=bounds.top&&p.y<=bounds.bottom;
-   if(this.tool==='lasso'||(this.tool==='move'&&within)){
+   if(this.tool==='rotateSelection'&&!this.selected.size){announce('Use Lasso to select atoms before rotating.');return;}
+   if(this.tool==='lasso'||this.tool==='rotateSelection'||(this.tool==='move'&&within)){
     e.preventDefault();this.anchor=null;this.cursor=p;
-    this.selectionDrag={mode:within?'move':'lasso',id:e.pointerId,start:p,points:[p],before:this.getGraph(),original:new Set(this.selected),previous:new Set(e.shiftKey?this.selected:[]),moved:false};
-    this.drag={id:e.pointerId,selection:true};if(!within&&!e.shiftKey)this.selected.clear();this.board.setPointerCapture?.(e.pointerId);this.render();return;
+    this.selectionDrag={mode:this.tool==='rotateSelection'?'rotate':within?'move':'lasso',id:e.pointerId,start:p,points:[p],before:this.getGraph(),original:new Set(this.selected),previous:new Set(e.shiftKey?this.selected:[]),moved:false};
+    this.drag={id:e.pointerId,selection:true};if(this.tool!=='rotateSelection'&&!within&&!e.shiftKey)this.selected.clear();this.board.setPointerCapture?.(e.pointerId);this.render();return;
    }
    return super.down(e);
   }
   motion(e){
    const d=this.selectionDrag;if(!d)return super.motion(e);if(e.pointerId!==d.id)return;
    const p=this.point(e);if(Math.hypot(p.x-d.start.x,p.y-d.start.y)<5&&!d.moved)return;d.moved=true;
-   if(d.mode==='move'){
+   if(d.mode==='rotate'){
+    const atoms=d.before.atoms.filter(a=>this.selected.has(a.id)),cx=atoms.reduce((s,a)=>s+a.x,0)/atoms.length,cy=atoms.reduce((s,a)=>s+a.y,0)/atoms.length;
+    const rotation=Math.atan2(p.y-cy,p.x-cx)-Math.atan2(d.start.y-cy,d.start.x-cx);this.graph=rotateSelection(d.before,this.selected,rotation);this.render();
+   }else if(d.mode==='move'){
     this.graph=structuredClone(d.before);for(const a of this.graph.atoms)if(this.selected.has(a.id)){a.x+=p.x-d.start.x;a.y+=p.y-d.start.y;}this.render();
    }else{
     if(Math.hypot(p.x-d.points.at(-1).x,p.y-d.points.at(-1).y)>2)d.points.push(p);
@@ -67,18 +72,19 @@ export function selectionEditor(Base,$,announce=()=>{}){
   up(e){
    const d=this.selectionDrag;if(!d)return super.up(e);if(e.pointerId!==d.id)return;
    this.motion(e);this.selectionDrag=null;this.drag=null;$('p-preview').replaceChildren();
-   if(d.mode==='move'){
-    if(d.moved){this.history.push(d.before);if(this.history.length>100)this.history.shift();this.future=[];this.changed();announce('Moved '+this.selected.size+' selected atoms.');}else this.render();
+   if(d.mode==='move'||d.mode==='rotate'){
+    if(d.moved){this.history.push(d.before);if(this.history.length>100)this.history.shift();this.future=[];this.changed();announce((d.mode==='rotate'?'Rotated ':'Moved ')+this.selected.size+' selected atoms.');}else this.render();
    }else if(d.moved&&d.points.length>=2){
     this.selected.clear();for(const id of d.previous)this.selected.add(id);for(const a of this.graph.atoms)if(insidePolygon(a,selectionPolygon(d.points)))this.selected.add(a.id);this.render();announce(this.selected.size?this.selected.size+' atoms selected. Drag the highlighted area to move them, or choose Delete selected.':'No atoms selected. Draw a loop around the structure.');
    }else this.activate(this.point(e),this.target(e,this.point(e)));
   }
-  cancelSelection(){const d=this.selectionDrag;if(!d)return;if(d.mode==='move')this.graph=d.before;this.selected.clear();for(const id of d.original)this.selected.add(id);this.selectionDrag=null;this.drag=null;$('p-preview').replaceChildren();this.render();}
+  cancelSelection(){const d=this.selectionDrag;if(!d)return;if(d.mode==='move'||d.mode==='rotate')this.graph=d.before;this.selected.clear();for(const id of d.original)this.selected.add(id);this.selectionDrag=null;this.drag=null;$('p-preview').replaceChildren();this.render();}
   keydown(e){
    if(this.locked)return;
    if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='a'){e.preventDefault();this.selectAll();return;}
    if(e.key==='Escape'){this.cancelSelection();this.selected.clear();this.anchor=null;this.render();return;}
    if(this.selected.size&&['Delete','Backspace'].includes(e.key)){e.preventDefault();this.deleteSelected();return;}
+   if(this.selected.size&&this.tool==='rotateSelection'&&['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();this.snapshot();this.graph=rotateSelection(this.graph,this.selected,(e.key==='ArrowLeft'?-1:1)*Math.PI/(e.shiftKey?36:12));this.changed();return;}
    if(this.selected.size&&e.key.startsWith('Arrow')){e.preventDefault();this.snapshot();const step=e.shiftKey?20:5;for(const a of this.graph.atoms)if(this.selected.has(a.id)){a.x+=e.key==='ArrowLeft'?-step:e.key==='ArrowRight'?step:0;a.y+=e.key==='ArrowUp'?-step:e.key==='ArrowDown'?step:0;}this.changed();return;}
    return super.keydown(e);
   }
@@ -92,6 +98,7 @@ export function selectionEditor(Base,$,announce=()=>{}){
    }
    const button=$('p-delete-selected');button.hidden=!this.selected.size;button.disabled=this.locked||!this.selected.size;
    $('p-selected-status').textContent=this.selected.size?this.selected.size+' atoms selected':'';
+   if(this.tool==='rotateSelection')$('p-tool-status').textContent=this.selected.size?'Drag around selection centre to rotate':'Select atoms with Lasso first';
    if(this.tool==='lasso')$('p-tool-status').textContent=this.selected.size?'Drag selection to move':'Lasso · draw a loop to select';
   }
  };

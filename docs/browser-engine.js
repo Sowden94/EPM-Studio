@@ -15,7 +15,7 @@ export async function calculateBrowserEpm(graph,progress=()=>{},resources){
  if(!generator.getNextConformerAsMolecule(mol))throw Error('Could not generate a valid 3D conformer. Try a simpler structure.');
  if(mol.getAllAtoms()>BROWSER_LIMITS.totalAtoms)throw Error('The structure exceeds 400 total atoms after adding hydrogens.');
  let minimized=false;try{progress('Refining the geometry with MMFF94…');const ff=new ForceFieldMMFF94(mol,'MMFF94');minimized=ff.minimise({maxIts:500})===0;}catch{}
- const charges=partialCharges(mol),atoms=Array.from({length:mol.getAllAtoms()},(_,i)=>({el:mol.getAtomLabel(i),p:[mol.getAtomX(i),mol.getAtomY(i),mol.getAtomZ(i)]}));
+ const charges=partialCharges(mol),atoms=Array.from({length:mol.getAllAtoms()},(_,i)=>({el:mol.getAtomLabel(i),charge:mol.getAtomCharge(i),p:[mol.getAtomX(i),mol.getAtomY(i),mol.getAtomZ(i)]}));
  if(atoms.some(a=>a.p.some(v=>!Number.isFinite(v))))throw Error('The generated geometry contains invalid coordinates.');
  for(let i=0;i<atoms.length;i++)for(let j=0;j<i;j++)if(Math.hypot(...atoms[i].p.map((v,k)=>v-atoms[j].p[k]))<.35)throw Error('The generated geometry has overlapping atoms.');
  const centre=[0,1,2].map(k=>atoms.reduce((sum,a)=>sum+a.p[k],0)/atoms.length);atoms.forEach(a=>a.p=a.p.map((v,k)=>v-centre[k]));
